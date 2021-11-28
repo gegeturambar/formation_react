@@ -36,3 +36,16 @@
     transform: rotate(360deg);
   }
 }
+
+.border {
+  border: solid turquoise;
+}
+
+.wrapper {
+  padding: 5px 20px;
+  border: outset;
+}
+
+.wrapper fieldset {
+  margin: 20px 0;
+}
