@@ -4,10 +4,13 @@ import { BrowserRouter, Link, Route, Routes, Outlet } from "react-router-dom";
 import Login from "./views/Login";
 import Cart from "./views/Cart";
 import Products from "./views/Products";
-import Product from "./components/Product";
+import ProductForm from "./components/ProductForm";
 import ProductModel from "./models/ProductModel";
 import { useEffect } from "react";
 import NotFound from "./views/NotFound";
+import ProductFormEdit from "./components/ProductFormEdit";
+import ProductFormAdd from "./components/ProductFormAdd";
+import CategoryFormEdit from "./components/CategoryFormEdit";
 
 function App() {
   return (
@@ -24,7 +27,12 @@ function App() {
 
       <Routes>
         <Route path="/" element={<Products />}>
-          <Route path="/products/:productId" element={<Product />} />
+          <Route path="/products/:productId" element={<ProductFormEdit />} />
+          <Route path="/products/add" element={<ProductFormAdd />} />
+          <Route
+            path="/categories/:categoryId"
+            element={<CategoryFormEdit />}
+          />
         </Route>
         <Route path="/login" element={<Login />} />
         <Route path="/cart" element={<Cart />} />

@@ -1,4 +1,5 @@
 import React, { useContext, useState } from "react";
+import { Link } from "react-router-dom";
 import { productContext } from "../views/Products";
 import ProductTable from "./ProductTable";
 import SearchBar from "./SearchBar";
@@ -8,7 +9,7 @@ export default function FilterableProductTable() {
   const [filterText, setFilterText] = useState("");
   const [inStockOnly, setInStockOnly] = useState(false);
 
-  const [products, setProducts] = useContext(productContext);
+  const { products, setProducts } = useContext(productContext);
 
   return (
     <div style={{ width: "30%", border: "solid red" }}>
@@ -26,6 +27,7 @@ export default function FilterableProductTable() {
         inStockOnly={inStockOnly}
       />
       <Spacer />
+      <Link to={"/products/add"}>add product</Link>
     </div>
   );
 }

@@ -6,7 +6,7 @@ import { productContext } from "../views/Products";
 export default function Product() {
   let params = useParams();
 
-  const [products, setProducts] = useContext(productContext);
+  const { products, setProducts } = useContext(productContext);
 
   console.log(params.productId);
 
