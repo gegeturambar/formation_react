@@ -30,7 +30,6 @@ export default function CategoryFormEdit() {
       );
       let newCategories = categories.slice();
       newCategories[idx] = category;
-      console.log(newCategories);
       setCategories(newCategories);
     };
 

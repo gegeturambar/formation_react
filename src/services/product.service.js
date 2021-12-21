@@ -1,4 +1,5 @@
 export default class ProductService {
+  // static productUrl = "https://fakestoreapi.com/products";
   static productUrl = "http://localhost:8080/api/products";
 
   static getInit(init, ctType = "application/json") {
@@ -25,7 +26,7 @@ export default class ProductService {
 
   static update(product) {
     let prod = { ...product };
-    delete prod.category;
+    prod.category = "/api/categories/" + prod.category.id;
     return fetch(
       ProductService.productUrl + "/" + prod.id,
       ProductService.getInit(
@@ -39,7 +40,7 @@ export default class ProductService {
     let prod = { ...product };
     prod.category = "/api/categories/" + prod.category.id;
     return fetch(
-      ProductService.productUrl + "/" + prod.id,
+      ProductService.productUrl,
       ProductService.getInit(
         { method: "POST", body: JSON.stringify(prod) },
         "application/merge-patch+json"

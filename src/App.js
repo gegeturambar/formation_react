@@ -8,9 +8,9 @@ import ProductForm from "./components/ProductForm";
 import ProductModel from "./models/ProductModel";
 import { useEffect } from "react";
 import NotFound from "./views/NotFound";
-import ProductFormEdit from "./components/ProductFormEdit";
-import ProductFormAdd from "./components/ProductFormAdd";
 import CategoryFormEdit from "./components/CategoryFormEdit";
+import Product from "./views/Product";
+import Test from "./views/Test";
 
 function App() {
   return (
@@ -22,13 +22,14 @@ function App() {
         }}
       >
         <Link to="/">Products</Link> | {""}
+        <Link to="/test">Test</Link> | {""}
         <Link to="/login">Login</Link> | <Link to="/cart">Cart</Link>
       </nav>
 
       <Routes>
         <Route path="/" element={<Products />}>
-          <Route path="/products/:productId" element={<ProductFormEdit />} />
-          <Route path="/products/add" element={<ProductFormAdd />} />
+          <Route path="/products/:productId" element={<Product />} />
+          <Route path="/products/add" element={<Product />} />
           <Route
             path="/categories/:categoryId"
             element={<CategoryFormEdit />}
@@ -36,6 +37,7 @@ function App() {
         </Route>
         <Route path="/login" element={<Login />} />
         <Route path="/cart" element={<Cart />} />
+        <Route path="/test" element={<Test />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>

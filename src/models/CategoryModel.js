@@ -1,7 +1,7 @@
 import CategoryService from "../services/category.service";
 
 export default class CategoryModel {
-  static categorys = [];
+  static categories = [];
 
   static init() {
     return CategoryService.getAll();

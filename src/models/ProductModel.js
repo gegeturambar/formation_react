@@ -8,7 +8,14 @@ export default class ProductModel {
   }
 
   static toDto(object) {
-    return object;
+    return {
+      category: object?.category,
+      name: object.name,
+      price: parseFloat(object?.price),
+      id: parseInt(object?.id),
+      stock: object.stock,
+      image: object.image,
+    };
   }
 
   static serialize(object) {

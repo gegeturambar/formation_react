@@ -14,7 +14,7 @@ export default function ProductTable({ products, filterText, inStockOnly }) {
     ) {
       return;
     }
-    if (inStockOnly && !product.stocked) return;
+    if (inStockOnly && !product.stock) return;
     if (product.category !== lastCategory) {
       rows.push(<ProductCategoryRow category={product.category} />);
     }

@@ -1,4 +1,7 @@
+import useFetch from "../hooks/useFetch";
+
 export default class CategoryService {
+  // static categoryUrl = "https://fakestoreapi.com/products/categories";
   static categoryUrl = "http://localhost:8080/api/categories";
 
   static getInit(init, ctType = "application/json") {
@@ -14,6 +17,7 @@ export default class CategoryService {
     myInit = { ...myInit, ...init };
     return myInit;
   }
+
   // return a Promise
   static getAll() {
     return fetch(CategoryService.categoryUrl, CategoryService.getInit());
